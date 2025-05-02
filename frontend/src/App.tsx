@@ -14,7 +14,7 @@ function App() {
   const ws = useRef<WebSocket>(null);
 
   useEffect(() => {
-    const url = `${import.meta.env.VITE_IS_DEVELOPMENT ? "ws" : "wss"}://${import.meta.env.VITE_BACKEND_WS_URL}`;
+    const url = `${import.meta.env.VITE_IS_DEVELOPMENT === true ? "ws" : "wss"}://${import.meta.env.VITE_BACKEND_WS_URL}`;
     ws.current = new WebSocket(url);
   }, []);
 
